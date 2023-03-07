@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   devise_scope :user do
-    root :to => "devise/sessions#new"
+    root :to => "devise/registrations#new"
+    get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  
-  get "users/:id" => "conversations#show"
 
-  def after_sign_in_path_for(resource)
-    ‘/posts’
-  end
-  
+  get 'conversations/:id', to: 'conversations#show'
+
+
   devise_for :users
   resources :messages
   resources :conversations
