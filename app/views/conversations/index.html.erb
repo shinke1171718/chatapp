@@ -7,7 +7,7 @@
 
 <h2>ユーザー一覧</h2>
 <div class = "user_list">
-  <% @user.each do |user| %>
+  <% @users.each do |user| %>
     <%= link_to user.name, "/conversation_show" , method: :get %>
   <% end %>
 </div>

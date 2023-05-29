@@ -4,8 +4,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  get '/conversation_show' , to: 'conversations#show'
-
+  get '/conversation_show', to: 'conversations#show'
 
   devise_for :users
   resources :messages
